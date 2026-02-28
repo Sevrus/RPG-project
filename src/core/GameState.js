@@ -3,6 +3,11 @@ export const gameState = {
 
     location: { city: "Port-Nova" },
 
+    player: {
+      money: 1000,
+      inventory: {},
+    },
+
     markets: {
         "Port-Nova": {
             // indices par catégorie (base)
