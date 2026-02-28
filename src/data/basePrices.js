@@ -1,3 +1,4 @@
+// NOTE: Catalog is intentionally incomplete (iterative content fill).
 export const basePrices = {
     food: {
         bread: 8,

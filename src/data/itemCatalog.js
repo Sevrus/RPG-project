@@ -1,3 +1,4 @@
+// NOTE: Catalog is intentionally incomplete (iterative content fill).
 export const itemCatalog = {
     bread: { category: "food", name: "Pain", unit: "miche" },
     egg: { category: "food", name: "Œuf", unit: "unité" },
