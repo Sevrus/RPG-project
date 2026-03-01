@@ -34,9 +34,21 @@ Créer un sandbox systémique dans lequel :
     - Spread achat/vente
     - Fluctuation quotidienne
     - Système d’événements (famine, caravane, festival)
+
 - `TransactionEngine`
     - Gestion centralisée inventaire + argent
     - buy() / sell() avec reçus structurés
+
+- `CraftEngine`
+  - Système de recettes déterministes
+  - Consommation d’ingrédients
+  - Coût en temps et en or
+  - Production d’objets transformés
+
+- `PropertyEngine`
+  - Achat de propriétés
+  - Stockage par propriété
+  - Dépôt / retrait d’objets
 
 ---
 
@@ -64,10 +76,9 @@ Contraintes :
 
 ## 🚧 Prochaines briques
 
-- CraftEngine
-- PropertyEngine
 - ContractEngine
 - TimeEngine avancé
+- Storage capacity and strength integration
 - LabyrinthEngine (module isolé)
 
 ---
@@ -83,5 +94,5 @@ Contraintes :
 
 ## 📌 État
 
-Version : `core-economy-v0`
-Statut : fondation en place
+Version : `economy-crafting-property-v0`
+Statut : core sandbox systems operational
