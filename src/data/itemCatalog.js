@@ -7,6 +7,7 @@ export const itemCatalog = {
     ironOre_5kg: { category: "materials", name: "Minerai de fer", unit: "5kg", tags: ["ore", "metal"] },
     woodPlank_2m: { category: "materials", name: "Planche de pin", unit: "2m", tags: ["wood"] },
     charcoal_5kg: { category: "materials", name: "Charbon de forge", unit: "5kg", tags: ["fuel"] },
+    ironIngot: { category: "materials", name: "Iron Ingot", unit: "unit", tags: ["metal", "refined"] },
 
     innDinner: { category: "services", name: "Dîner (auberge)", unit: "repas" },
 };

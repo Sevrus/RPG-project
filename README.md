@@ -34,6 +34,9 @@ Créer un sandbox systémique dans lequel :
     - Spread achat/vente
     - Fluctuation quotidienne
     - Système d’événements (famine, caravane, festival)
+- `TransactionEngine`
+    - Gestion centralisée inventaire + argent
+    - buy() / sell() avec reçus structurés
 
 ---
 
@@ -61,7 +64,6 @@ Contraintes :
 
 ## 🚧 Prochaines briques
 
-- Inventory + TransactionEngine
 - CraftEngine
 - PropertyEngine
 - ContractEngine
@@ -81,5 +83,5 @@ Contraintes :
 
 ## 📌 État
 
-Version : `market-core-v0`
+Version : `core-economy-v0`
 Statut : fondation en place

@@ -9,6 +9,7 @@ export const basePrices = {
         ironOre_5kg: 80,
         woodPlank_2m: 25,
         charcoal_5kg: 20,
+        ironIngot: 220,
     },
     services: {
         innDinner: 90,
