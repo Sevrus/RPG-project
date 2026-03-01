@@ -1,98 +1,92 @@
 # Isekai Sandbox Engine
 
-Un moteur RPG sandbox orienté ultra-système avec économie dynamique.
-Objectif : permettre une expérience libre (artisanat, commerce, construction, exploration, labyrinthe) sans dépendre d’une IA pour la logique mécanique.
+A systemic RPG sandbox engine built around deterministic mechanics and a dynamic economy.
+
+The goal is to create a living simulation where the player can act as artisan, merchant, property owner, explorer, or dungeon runner — without relying on AI for mechanical logic.
 
 ---
 
 ## 🎯 Vision
 
-Créer un sandbox systémique dans lequel :
+Build a systemic sandbox where:
 
-- Le joueur peut vivre comme artisan, marchand, propriétaire, aventurier ou noble.
-- L’économie est dynamique et régionale.
-- Le labyrinthe est un secteur indépendant.
-- L’IA ne gère que la narration et les dialogues.
-- Toutes les mécaniques sont déterministes et contrôlées par le moteur JS.
+- The player can live as an artisan, merchant, adventurer, or noble.
+- The economy is dynamic and regional.
+- The labyrinth operates as an independent system.
+- AI handles only narration and dialogue.
+- All mechanics are deterministic and controlled by the JS engine.
 
 ---
 
-## 🧱 Architecture actuelle
+## 🧱 Current Architecture
 
 ### Core
-- `GameState` : état global unique du monde.
+- `GameState` – Single global world state (fully serializable).
 
 ### Data
-- `basePrices` : prix de référence issus des tables du monde.
-- `itemCatalog` : métadonnées des objets (catégories, tags, unités).
+- `basePrices` – Reference prices derived from world tables.
+- `itemCatalog` – Item metadata (categories, tags, units).
 
 ### Engines
 - `MarketEngine`
-    - Prix dynamiques par ville
-    - Indices d’offre/demande
-    - Taxes locales
-    - Spread achat/vente
-    - Fluctuation quotidienne
-    - Système d’événements (famine, caravane, festival)
+  - Dynamic city pricing
+  - Supply/demand indexes
+  - Local taxes
+  - Buy/sell spread
+  - Daily fluctuation
+  - Event system (famine, caravan, festival)
 
 - `TransactionEngine`
-    - Gestion centralisée inventaire + argent
-    - buy() / sell() avec reçus structurés
+  - Centralized inventory and money handling
+  - `buy()` / `sell()` with structured receipts
 
 - `CraftEngine`
-  - Système de recettes déterministes
-  - Consommation d’ingrédients
-  - Coût en temps et en or
-  - Production d’objets transformés
+  - Deterministic recipe system
+  - Ingredient consumption
+  - Time and gold cost
+  - Refined item production
 
 - `PropertyEngine`
-  - Achat de propriétés
-  - Stockage par propriété
-  - Dépôt / retrait d’objets
+  - Property acquisition
+  - Per-property storage
+  - Deposit / withdraw mechanics
 
 ---
 
-## 💰 Market Engine – v0
+## 💰 Economic Model (v0)
 
-Fonctionnalités :
+Final price formula:
 
-- `getBuyPrice(city, itemId, state)`
-- `getSellPrice(city, itemId, state)`
-- `tickDay(state)`
-- `applyEvent(city, event, state)`
+basePrice × cityIndex × (1 + tax) × spread
 
-### Modèle économique
-
-Prix final =
-
-basePrice × indexVille × (1 + taxe) × spread
-
-Contraintes :
-- Index borné entre 0.7 et 1.3 (v0)
-- Spread vente < Spread achat
-- Prix arrondis à l’unité
+Constraints:
+- Index bounded between 0.7 and 1.3 (v0)
+- Sell spread < Buy spread
+- Prices rounded to whole units
 
 ---
 
-## 🚧 Prochaines briques
+## 🚧 Roadmap (Next Milestones)
 
-- ContractEngine
-- TimeEngine avancé
-- Storage capacity and strength integration
-- LabyrinthEngine (module isolé)
+- TimeEngine v1
+- XP / LevelEngine v1
+- LabyrinthEngine v1
+- ContractEngine v1
 
----
-
-## 🧠 Philosophie
-
-- Petites briques stables
-- Systèmes indépendants et testables
-- Pas d’usine à gaz prématurée
-- Construction progressive
+See `ARCHITECTURE.md` for the full roadmap and long-term evolution plan.
 
 ---
 
-## 📌 État
+## 🧠 Philosophy
 
-Version : `economy-crafting-property-v0`
-Statut : core sandbox systems operational
+- Small stable modules
+- Independent and testable systems
+- No premature complexity
+- Progressive construction
+
+---
+
+## 📌 Status
+
+Version: `core-systems-foundation`  
+Status: economy, crafting, and property systems operational
