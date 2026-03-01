@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/logo_isekai_noback.webp" width="300" alt="Isekai Sandbox Engine Logo"/>
+</p>
+
 # Isekai Sandbox Engine
 
 A systemic RPG sandbox engine built around deterministic mechanics, modular systems, and a dynamic economy.
@@ -120,6 +124,13 @@ AI never directly modifies the game state.
 - Deterministic mechanics
 - No premature abstraction
 - Progressive expansion
+
+---
+
+## 🎨 Logo
+
+The project logo was generated using AI and is used for illustrative purposes.
+Final branding may evolve over time.
 
 ---
 
