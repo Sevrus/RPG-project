@@ -1,85 +1,131 @@
 # Isekai Sandbox Engine
 
-Un moteur RPG sandbox orienté ultra-système avec économie dynamique.
-Objectif : permettre une expérience libre (artisanat, commerce, construction, exploration, labyrinthe) sans dépendre d’une IA pour la logique mécanique.
+A systemic RPG sandbox engine built around deterministic mechanics, modular systems, and a dynamic economy.
+
+The goal is to create a living simulation where the player can act as an artisan, merchant, property owner, explorer, or dungeon runner — without relying on AI for mechanical logic.
 
 ---
 
 ## 🎯 Vision
 
-Créer un sandbox systémique dans lequel :
+Build a systemic sandbox where:
 
-- Le joueur peut vivre comme artisan, marchand, propriétaire, aventurier ou noble.
-- L’économie est dynamique et régionale.
-- Le labyrinthe est un secteur indépendant.
-- L’IA ne gère que la narration et les dialogues.
-- Toutes les mécaniques sont déterministes et contrôlées par le moteur JS.
+- The player can live as an artisan, merchant, adventurer, or noble.
+- The economy is dynamic and region-based.
+- The labyrinth operates as an independent system.
+- AI handles narration and dialogue only.
+- All mechanics are deterministic and controlled by the JS engine.
 
 ---
 
-## 🧱 Architecture actuelle
+## 🧱 Current Scope
+
+The engine is designed as a modular, backend-independent core.
 
 ### Core
-- `GameState` : état global unique du monde.
+- `GameState` – Single, fully serializable world state.
 
-### Data
-- `basePrices` : prix de référence issus des tables du monde.
-- `itemCatalog` : métadonnées des objets (catégories, tags, unités).
-
-### Engines
+### Engines Implemented
 - `MarketEngine`
-    - Prix dynamiques par ville
-    - Indices d’offre/demande
-    - Taxes locales
-    - Spread achat/vente
-    - Fluctuation quotidienne
-    - Système d’événements (famine, caravane, festival)
+  - Dynamic pricing per city
+  - Supply/demand indexes
+  - Local taxes
+  - Buy/sell spread
+  - Daily fluctuations
+  - Event hooks
+
+- `TransactionEngine`
+  - Centralized inventory and money handling
+  - Structured transaction receipts
+
+- `CraftEngine`
+  - Deterministic recipe system
+  - Ingredient consumption
+  - Time and gold costs
+  - Refined item production
+
+- `PropertyEngine`
+  - Property acquisition
+  - Per-property storage
+  - Deposit / withdraw mechanics
+
+- `TimeEngine`
+  - Minute / hour / day progression
+  - Automatic daily market updates
 
 ---
 
-## 💰 Market Engine – v0
+## 💰 Economic Model (v0)
 
-Fonctionnalités :
+Final price formula:
 
-- `getBuyPrice(city, itemId, state)`
-- `getSellPrice(city, itemId, state)`
-- `tickDay(state)`
-- `applyEvent(city, event, state)`
+basePrice × cityIndex × (1 + tax) × spread
 
-### Modèle économique
-
-Prix final =
-
-basePrice × indexVille × (1 + taxe) × spread
-
-Contraintes :
-- Index borné entre 0.7 et 1.3 (v0)
-- Spread vente < Spread achat
-- Prix arrondis à l’unité
+Constraints:
+- Index bounded between 0.7 and 1.3 (v0)
+- Sell spread < Buy spread
+- Prices rounded to whole units
 
 ---
 
-## 🚧 Prochaines briques
+## 🚧 Next Milestones
 
-- Inventory + TransactionEngine
-- CraftEngine
-- PropertyEngine
-- ContractEngine
-- TimeEngine avancé
-- LabyrinthEngine (module isolé)
+- XP / LevelEngine v1
+- LabyrinthEngine v1
+- ContractEngine v1
+- UI implementation (solo version)
 
----
-
-## 🧠 Philosophie
-
-- Petites briques stables
-- Systèmes indépendants et testables
-- Pas d’usine à gaz prématurée
-- Construction progressive
+See `ARCHITECTURE.md` for the full long-term roadmap.
 
 ---
 
-## 📌 État
+## 🏗 Project Phases
 
-Version : `market-core-v0`
-Statut : fondation en place
+1. **Solo Application**
+  - Local save
+  - Web UI
+  - Fully playable sandbox loop
+
+2. **Web Application**
+  - Backend API
+  - Multi-session support
+  - Persistent world state
+
+3. **Mobile Extension**
+  - PWA or React Native adaptation
+
+The Core Engine remains unchanged across all phases.
+
+---
+
+## 🤖 AI Philosophy
+
+AI is strictly separated from mechanical logic.
+
+Flow:
+
+AI → proposes narrative intent  
+Engine → validates mechanics  
+GameState → updated  
+AI → narrates result
+
+AI never directly modifies the game state.
+
+---
+
+## 🧠 Development Principles
+
+- Small stable modules
+- Clear branch-per-feature workflow
+- Deterministic mechanics
+- No premature abstraction
+- Progressive expansion
+
+---
+
+## 📌 Status
+
+Version: `core-systems-foundation`  
+Status: Economy, crafting, property, and time systems operational.
+
+> Active development happens on the `develop` branch.
