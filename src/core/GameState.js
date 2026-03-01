@@ -6,6 +6,7 @@ export const gameState = {
     player: {
       money: 1000,
       inventory: {},
+        properties: [],
     },
 
     markets: {
