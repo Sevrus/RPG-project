@@ -11,6 +11,9 @@ export const gameState = {
       money: 1000,
       inventory: {},
         properties: [],
+        level: 1,
+        xp: 0,
+        bp: 0 // build points
     },
 
     markets: {
