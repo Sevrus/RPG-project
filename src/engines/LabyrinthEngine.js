@@ -1,8 +1,8 @@
-import { CombatResolver } from "./CombatResolver.js";
-import { pickMonsterByFloor } from "../data/monsters.js";
-import { rollLoot } from "../data/lootTables.js";
-import { TransactionEngine } from "./TransactionEngine.js";
-import { XPLevelEngine } from "./XPLevelEngine.js";
+import {CombatResolver} from "./CombatResolver.js";
+import {pickMonsterByFloor} from "../data/monsters.js";
+import {rollLoot} from "../data/lootTables.js";
+import {TransactionEngine} from "./TransactionEngine.js";
+import {XPLevelEngine} from "./XPLevelEngine.js";
 
 const makeId = (prefix = "run") => `${prefix}_${Date.now()}_${Math.floor(Math.random() * 10000)}`;
 
@@ -31,7 +31,7 @@ export class LabyrinthEngine {
             }
         }
 
-        const run = {
+        state.labyrinth.activeRun = {
             id: runId,
             startedDay: state.time.day,
             nodes,
@@ -46,8 +46,6 @@ export class LabyrinthEngine {
                 loot: [], // aggregated [{itemId, qty}]
             },
         };
-
-        state.labyrinth.activeRun = run;
 
         return { type: "LAB_RUN_START", runId, floors, roomsPerFloor, day: state.time.day };
     }
