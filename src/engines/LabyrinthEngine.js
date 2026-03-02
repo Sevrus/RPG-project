@@ -120,8 +120,6 @@ export class LabyrinthEngine {
                     // We add items directly (no city pricing involved)
                     // Reuse TransactionEngine helper to keep inventory logic centralized
                     TransactionEngine.addItem?.(state, drop.itemId, drop.qty);
-                    // If your TransactionEngine doesn't expose addItem, just do:
-                    // state.player.inventory[drop.itemId] = (state.player.inventory[drop.itemId] ?? 0) + drop.qty;
 
                     // Aggregate summary loot
                     const existing = run.summary.loot.find(x => x.itemId === drop.itemId);
@@ -136,6 +134,12 @@ export class LabyrinthEngine {
                 run.completed = true;
                 run.currentNodeId = null;
                 events.push({ type: "LAB_RUN_FAILED", runId: run.id });
+
+                // TODO: implement actual inventory drop + recovery (future multi-session / persistence feature)
+                events.push({
+                    type: "LAB_DEATH_DROP",
+                    note: "Softcore v1: inventory is not removed yet. Will be implemented with persistent corpse/loot.",
+                });
             }
         }
 
