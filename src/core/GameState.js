@@ -32,4 +32,7 @@ export const gameState = {
             flags: [],
         },
     },
+    labyrinth: {
+        activeRun: null
+    }
 };
