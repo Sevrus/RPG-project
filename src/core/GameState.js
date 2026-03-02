@@ -1,5 +1,9 @@
 export const gameState = {
-    time: { day: 1 },
+    time: {
+        day: 1,
+        hour: 8,
+        minute: 0,
+    },
 
     location: { city: "Port-Nova" },
 
