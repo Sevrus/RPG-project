@@ -1,4 +1,4 @@
-import { MarketEngine } from "./MarketEngine.js";
+import { DailyTickEngine } from "./DailyTickEngine.js";
 
 export class TimeEngine {
 
@@ -17,7 +17,7 @@ export class TimeEngine {
             state.time.day += 1;
 
             // Daily hook
-            MarketEngine.tickDay(state);
+            DailyTickEngine.tickDay(state);
         }
     }
 
