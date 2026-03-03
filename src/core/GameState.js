@@ -13,7 +13,10 @@ export const gameState = {
         properties: [],
         level: 1,
         xp: 0,
-        bp: 0 // build points
+        bp: 0, // build points
+        hp: 30,
+        attack: 7,
+        defense: 2,
     },
 
     markets: {
