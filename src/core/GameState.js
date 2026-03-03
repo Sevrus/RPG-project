@@ -37,5 +37,11 @@ export const gameState = {
     },
     labyrinth: {
         activeRun: null
+    },
+    contracts: {
+        available: [],
+        active: [],
+        completed: [],
+        failed: []
     }
 };
