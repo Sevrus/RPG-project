@@ -35,13 +35,20 @@ export const gameState = {
             flags: [],
         },
     },
+
     labyrinth: {
         activeRun: null
     },
+
     contracts: {
         available: [],
         active: [],
         completed: [],
         failed: []
+    },
+
+    meta: {
+        saveVersion: 1,
+        createdAt: Date.now()
     }
 };
