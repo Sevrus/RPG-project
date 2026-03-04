@@ -68,10 +68,11 @@ Constraints:
 
 ## 🚧 Roadmap (Next Milestones)
 
-- TimeEngine v1
-- XP / LevelEngine v1
-- LabyrinthEngine v1
-- ContractEngine v1
+- UI v0 (Dashboard, Inventory, Market, Craft, Property, Dungeon run log)
+- Local persistence v1 (localStorage + export/import JSON)
+- Save versioning + migrations v0 (minimal, but prevents broken saves)
+- Action/Event log v0 (optional UI-friendly history + debugging)
+- World data expansion (catalog/prices/loot tables)
 
 See `ARCHITECTURE.md` for the full roadmap and long-term evolution plan.
 
@@ -89,4 +90,4 @@ See `ARCHITECTURE.md` for the full roadmap and long-term evolution plan.
 ## 📌 Status
 
 Version: `core-systems-foundation`  
-Status: economy, crafting, and property systems operational
+Status: economy, crafting, property, time, xp, lab, and contracts systems operational

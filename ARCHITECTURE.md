@@ -26,10 +26,13 @@ Current and planned modules:
 - TransactionEngine
 - CraftEngine
 - PropertyEngine
-- TimeEngine (planned)
-- XP / LevelEngine (planned)
-- LabyrinthEngine (planned)
-- ContractEngine (planned)
+- TimeEngine 
+- XP / LevelEngine 
+- LabyrinthEngine 
+- ContractEngine 
+
+These modules form the deterministic core of the simulation.
+Future phases add UI, persistence, and AI layers on top of this engine.
 
 Rules:
 
