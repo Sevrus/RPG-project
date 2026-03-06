@@ -6,6 +6,8 @@ import { SaveEngine } from "@engine/engines/SaveEngine.js";
 
 import Dashboard from "./components/Dashboard.jsx";
 import StateViewer from "./components/StateViewer.jsx";
+import LabyrinthPanel from "./components/LabyrinthPanel.jsx";
+import ContractPanel from "./components/ContractPanel.jsx";
 
 const clone = (x) => JSON.parse(JSON.stringify(x));
 
@@ -41,7 +43,7 @@ export default function App() {
 
     return (
         <div style={{ padding: 16, fontFamily: "sans-serif" }}>
-            <h1>Isekai Sandbox Engine – UI v0.2</h1>
+            <h1>Isekai Sandbox Engine – UI v0.3</h1>
 
             <Dashboard
                 state={state}
@@ -50,6 +52,9 @@ export default function App() {
                 onSave={onSave}
                 onLoad={onLoad}
             />
+
+            <LabyrinthPanel gameState={gameState} onSync={sync} />
+            <ContractPanel gameState={gameState} onSync={sync} />
 
             <h2>GameState (debug)</h2>
             <StateViewer state={state} />

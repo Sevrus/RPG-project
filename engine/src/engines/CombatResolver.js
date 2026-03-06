@@ -1,5 +1,6 @@
 export class CombatResolver {
-    static resolve({ player, monster, rng = Math.random }) {
+    static resolve({player, monster, rng = Math.random}) {
+        console.log("CombatResolver input:", { player, monster });
         const p = {
             name: "Player",
             hp: player.hp ?? 30,
