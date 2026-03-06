@@ -8,6 +8,9 @@ import Dashboard from "./components/Dashboard.jsx";
 import StateViewer from "./components/StateViewer.jsx";
 import LabyrinthPanel from "./components/LabyrinthPanel.jsx";
 import ContractPanel from "./components/ContractPanel.jsx";
+import InventoryPanel from "./components/InventoryPanel.jsx";
+import ContractList from "./components/ContractList.jsx";
+import LabyrinthLog from "./components/LabyrinthLog.jsx";
 
 const clone = (x) => JSON.parse(JSON.stringify(x));
 
@@ -57,6 +60,9 @@ export default function App() {
             <ContractPanel gameState={gameState} onSync={sync} />
 
             <h2>GameState (debug)</h2>
+            <InventoryPanel state={state} />
+            <ContractList state={state} />
+            <LabyrinthLog state={state} />
             <StateViewer state={state} />
         </div>
     );
