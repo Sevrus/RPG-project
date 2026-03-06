@@ -92,7 +92,11 @@ export class LabyrinthEngine {
             const floor = node.floor;
             const monster = pickMonsterByFloor(node.type === "boss" ? floor + 1 : floor);
 
-            const combat = CombatResolver.resolve(state.player, monster);
+            const combat = CombatResolver.resolve({
+                player: state.player,
+                monster: monster
+            });
+
             events.push({
                 type: node.type === "boss" ? "LAB_BOSS_FIGHT" : "LAB_COMBAT",
                 nodeId: node.id,
