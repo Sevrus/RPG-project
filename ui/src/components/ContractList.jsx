@@ -12,7 +12,7 @@ function ContractBlock({title, contracts}) {
                         return (
                             <li key={contract.id} style={{marginBottom: 8}}>
                                 <div><strong>{contract.type}</strong> - {contract.status}</div>
-                                <div>From: {contract.cityFrom} -> To: {contract.cityTo}</div>
+                                <div>From: {contract.cityFrom} → To: {contract.cityTo}</div>
                                 <div>Requirement: {req?.itemId} x {req?.qty}</div>
                                 <div>Rewards: {contract.rewards?.gold ?? 0} gold / {contract.rewards?.xp ?? 0} XP</div>
                                 <div>Deadline: {contract.deadlineDay ?? "N/A"}</div>
